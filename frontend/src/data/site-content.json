@@ -1,0 +1,122 @@
+{
+  "home.hero.title": {
+    "label": "Hero - Judul Utama",
+    "page": "Beranda",
+    "value": "Portal Digital Kecamatan Cigedug"
+  },
+  "home.hero.subtitle": {
+    "label": "Hero - Sub Judul",
+    "page": "Beranda",
+    "value": "Kabupaten Garut, Jawa Barat"
+  },
+  "home.hero.tagline": {
+    "label": "Hero - Tagline",
+    "page": "Beranda",
+    "value": "Melayani dengan sepenuh hati untuk masyarakat yang maju, mandiri, dan sejahtera."
+  },
+  "home.sambutan.title": {
+    "label": "Sambutan - Judul",
+    "page": "Beranda",
+    "value": "Sambutan Camat Cigedug"
+  },
+  "home.sambutan.nama": {
+    "label": "Sambutan - Nama Camat",
+    "page": "Beranda",
+    "value": "Drs. H. Ahmad Yani, M.Si"
+  },
+  "home.sambutan.body": {
+    "label": "Sambutan - Isi Teks",
+    "page": "Beranda",
+    "value": "Puji syukur kami panjatkan kepada Allah SWT atas berkat dan rahmat-Nya. Selamat datang di Portal Digital Kecamatan Cigedug. Portal ini hadir sebagai wujud komitmen kami untuk memberikan pelayanan publik yang transparan, mudah diakses, dan akuntabel kepada seluruh lapisan masyarakat."
+  },
+  "profil.deskripsi": {
+    "label": "Deskripsi Umum Kecamatan",
+    "page": "Profil",
+    "value": "Kecamatan Cigedug adalah salah satu kecamatan yang berada di Kabupaten Garut, Jawa Barat. Terletak di ketinggian 1.300 mdpl dengan suhu rata-rata 15-20°C, menjadikan Cigedug sebagai daerah yang subur dan sejuk."
+  },
+  "profil.visi": {
+    "label": "Visi Kecamatan",
+    "page": "Profil",
+    "value": "Terwujudnya Kecamatan Cigedug yang Maju, Mandiri, dan Sejahtera Berbasis Pertanian dan Pariwisata yang Berwawasan Lingkungan."
+  },
+  "profil.misi1": {
+    "label": "Misi 1",
+    "page": "Profil",
+    "value": "Meningkatkan kualitas pelayanan publik yang profesional, transparan, dan akuntabel."
+  },
+  "profil.misi2": {
+    "label": "Misi 2",
+    "page": "Profil",
+    "value": "Mengembangkan potensi pertanian, perkebunan, dan peternakan secara berkelanjutan."
+  },
+  "profil.misi3": {
+    "label": "Misi 3",
+    "page": "Profil",
+    "value": "Membangun infrastruktur yang merata dan berwawasan lingkungan di seluruh wilayah kecamatan."
+  },
+  "profil.sejarah": {
+    "label": "Sejarah Singkat",
+    "page": "Profil",
+    "value": "Kecamatan Cigedug dibentuk pada masa pemerintahan kolonial Belanda dan terus berkembang hingga saat ini. Nama Cigedug berasal dari bahasa Sunda yang memiliki makna historis yang kuat bagi masyarakat setempat."
+  },
+  "desa.hero.title": {
+    "label": "Hero - Judul Utama",
+    "page": "Desa",
+    "value": "Jelajahi Desa"
+  },
+  "desa.hero.desc": {
+    "label": "Hero - Deskripsi",
+    "page": "Desa",
+    "value": "Kenali lebih dekat potensi, profil, dan pesona dari 5 desa yang berada di wilayah Kecamatan Cigedug."
+  },
+  "pelayanan.hero.title": {
+    "label": "Hero - Judul Utama",
+    "page": "Pelayanan",
+    "value": "Pelayanan Publik"
+  },
+  "pelayanan.hero.desc": {
+    "label": "Hero - Deskripsi",
+    "page": "Pelayanan",
+    "value": "Pusat informasi dan panduan layanan administrasi kependudukan dan perizinan terpadu."
+  },
+  "berita.hero.title": {
+    "label": "Hero - Judul Utama",
+    "page": "Berita",
+    "value": "Media Informasi"
+  },
+  "berita.hero.desc": {
+    "label": "Hero - Deskripsi",
+    "page": "Berita",
+    "value": "Temukan berbagai inovasi, pengumuman, dan berita terkini tentang perkembangan Kecamatan Cigedug untuk pelayanan masyarakat yang lebih baik."
+  },
+  "galeri.hero.title": {
+    "label": "Hero - Judul Utama",
+    "page": "Galeri",
+    "value": "Galeri Foto"
+  },
+  "galeri.hero.desc": {
+    "label": "Hero - Deskripsi",
+    "page": "Galeri",
+    "value": "Dokumentasi visual dari berbagai kegiatan, keindahan alam, dan budaya yang ada di Kecamatan Cigedug."
+  },
+  "agenda.hero.title": {
+    "label": "Hero - Judul Utama",
+    "page": "Agenda",
+    "value": "Agenda Kecamatan"
+  },
+  "agenda.hero.desc": {
+    "label": "Hero - Deskripsi",
+    "page": "Agenda",
+    "value": "Jadwal dan agenda kegiatan mendatang di wilayah pemerintahan Kecamatan Cigedug."
+  },
+  "potensi.hero.title": {
+    "label": "Hero - Judul Utama",
+    "page": "Potensi",
+    "value": "Potensi Daerah"
+  },
+  "potensi.hero.desc": {
+    "label": "Hero - Deskripsi",
+    "page": "Potensi",
+    "value": "Kenali berbagai potensi unggulan yang ada di Kecamatan Cigedug mulai dari alam hingga UMKM."
+  }
+}

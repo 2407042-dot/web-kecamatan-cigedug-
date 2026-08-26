@@ -1,0 +1,34 @@
+{
+  "home_videos": [
+    "/hero-1.mp4",
+    "/hero-2.mp4",
+    "/hero-3.mp4"
+  ],
+  "page_heroes": [
+    {
+      "id": "cigedug",
+      "label": "Hero Desa Cigedug",
+      "url": "/images/desa/cigedug-hero.jpeg"
+    },
+    {
+      "id": "barusuda",
+      "label": "Hero Desa Barusuda",
+      "url": "/images/desa/barusuda-hero.jpeg"
+    },
+    {
+      "id": "cintanagara",
+      "label": "Hero Desa Cintanagara",
+      "url": "/images/desa/cintanagara-hero.jpeg"
+    },
+    {
+      "id": "sindangsari",
+      "label": "Hero Desa Sindangsari",
+      "url": "/images/desa/sindangsari-hero.jpeg"
+    },
+    {
+      "id": "sukahurip",
+      "label": "Hero Desa Sukahurip",
+      "url": "/images/desa/sukahurip-hero.jpeg"
+    }
+  ]
+}
