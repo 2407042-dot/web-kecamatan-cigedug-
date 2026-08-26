@@ -1,0 +1,271 @@
+%PDF-1.3
+%ºß¬à
+3 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 4 0 R
+>>
+endobj
+4 0 obj
+<<
+/Length 2319
+>>
+stream
+0.5670000000000001 w
+0 G
+BT
+/F1 14 Tf
+16.0999999999999979 TL
+0 g
+39.6850393700787407 785.1970866141732586 Td
+(Informasi Dataset: Jumlah Penduduk Per Desa di Kecamatan Cigedug) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+39.6850393700787407 756.8506299212598378 Td
+(OPD: Kecamatan Cigedug) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+39.6850393700787407 728.5041732283464171 Td
+(Deskripsi: Dataset ini berisi Data Jumlah Penduduk Per Desa di Kecamatan CigedugPenjelasan mengenai variabel) Tj
+T* (di dalam Dataset ini sebagai berikut:kode_kabupaten: menyatakan kode kabupaten sesuai ketentuan Kemendagri) Tj
+T* (merujuk pada Peraturan Menteri dalam Negeri Nomor 58 Tahun 2021 Tentang Kode, Data Wilayah Administrasi) Tj
+T* (Pemerintahan, dan Pulau dengan tipe data numerik.nama_kabupaten: menyatakan nama kabupaten sesuai) Tj
+T* (penamaan Kemendagri merujuk pada Peraturan Menteri dalam Negeri Nomor 58 Tahun 2021 Tentang Kode, Data) Tj
+T* (Wilayah Administrasi Pemerintahan, dan Pulau dengan tipe data teks.kode_kecamatan: menyatakan kode) Tj
+T* (kecamatan sesuai ketentuan Kemendagri merujuk pada Peraturan Menteri dalam Negeri Nomor 58 Tahun 2021) Tj
+T* (Tentang Kode, Data Wilayah Administrasi Pemerintahan, dan Pulau dengan tipe data numerik.nama_kecamatan:) Tj
+T* (menyatakan nama kecamatan sesuai penamaan Kemendagri merujuk pada Peraturan Menteri dalam Negeri Nomor) Tj
+T* (58 Tahun 2021 Tentang Kode, Data Wilayah Administrasi Pemerintahan, dan Pulau dengan tipe data) Tj
+T* (teks.kode_desa_kelurahan: menyatakan kode desa/kelurahan sesuai ketentuan Kemendagri merujuk pada) Tj
+T* (Peraturan Menteri dalam Negeri Nomor 58 Tahun 2021 Tentang Kode, Data Wilayah Administrasi Pemerintahan,) Tj
+T* (dan Pulau dengan tipe data numerik.nama_desa_kelurahan: menyatakan nama desa/kelurahan sesuai penamaan) Tj
+T* (Kemendagri merujuk pada Peraturan Menteri dalam Negeri Nomor 58 Tahun 2021 Tentang Kode, Data Wilayah) Tj
+T* (Administrasi Pemerintahan, dan Pulau dengan tipe data teks.jenis_kelamin: menyatakan jenis kelamin penduduk) Tj
+T* (dengan tipe data teks.jumlah_penduduk: menyatakan jumlah penduduk berdasarkan jenis kelamin dan nama) Tj
+T* (desa/kelurahan di Kecamatan Cigedug dengan tipe data numerik.satuan: menyatakan satuan dari data dengan tipe) Tj
+T* (data teks.tahun: menyatakan tahun produksi data dengan tipe data numerik.) Tj
+ET
+endstream
+endobj
+1 0 obj
+<</Type /Pages
+/Kids [3 0 R ]
+/Count 1
+>>
+endobj
+5 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+6 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+7 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-Oblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+8 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-BoldOblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+9 0 obj
+<<
+/Type /Font
+/BaseFont /Courier
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+10 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+11 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-Oblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+12 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-BoldOblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+13 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Roman
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+14 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+15 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Italic
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+16 0 obj
+<<
+/Type /Font
+/BaseFont /Times-BoldItalic
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+17 0 obj
+<<
+/Type /Font
+/BaseFont /ZapfDingbats
+/Subtype /Type1
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+18 0 obj
+<<
+/Type /Font
+/BaseFont /Symbol
+/Subtype /Type1
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+2 0 obj
+<<
+/ProcSet [/PDF /Text /ImageB /ImageC /ImageI]
+/Font <<
+/F1 5 0 R
+/F2 6 0 R
+/F3 7 0 R
+/F4 8 0 R
+/F5 9 0 R
+/F6 10 0 R
+/F7 11 0 R
+/F8 12 0 R
+/F9 13 0 R
+/F10 14 0 R
+/F11 15 0 R
+/F12 16 0 R
+/F13 17 0 R
+/F14 18 0 R
+>>
+/XObject <<
+>>
+>>
+endobj
+19 0 obj
+<<
+/Producer (jsPDF 2.5.2)
+/CreationDate (D:20260813095524+07'00')
+>>
+endobj
+20 0 obj
+<<
+/Type /Catalog
+/Pages 1 0 R
+/OpenAction [3 0 R /FitH null]
+/PageLayout /OneColumn
+>>
+endobj
+xref
+0 21
+0000000000 65535 f 
+0000002523 00000 n 
+0000004340 00000 n 
+0000000015 00000 n 
+0000000152 00000 n 
+0000002580 00000 n 
+0000002705 00000 n 
+0000002835 00000 n 
+0000002968 00000 n 
+0000003105 00000 n 
+0000003228 00000 n 
+0000003357 00000 n 
+0000003489 00000 n 
+0000003625 00000 n 
+0000003753 00000 n 
+0000003880 00000 n 
+0000004009 00000 n 
+0000004142 00000 n 
+0000004244 00000 n 
+0000004588 00000 n 
+0000004674 00000 n 
+trailer
+<<
+/Size 21
+/Root 20 0 R
+/Info 19 0 R
+/ID [ <9C2FED071A9059F5B9E232083F03B555> <9C2FED071A9059F5B9E232083F03B555> ]
+>>
+startxref
+4778
+%%EOF
