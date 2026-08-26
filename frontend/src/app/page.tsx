@@ -199,7 +199,7 @@ export default async function Home() {
 
       {/* ── 2. Statistik Strip ───────────────────────────────────────────── */}
       <section className="bg-primary">
-        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-10 grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="max-w-container-max mx-auto px-6 md:px-12 py-10 grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map(({ icon, value, label }) => (
             <div key={label} className="flex flex-col items-center text-center gap-2">
               <span className="material-symbols-outlined icon-filled text-3xl text-primary-fixed-dim">
@@ -213,8 +213,8 @@ export default async function Home() {
       </section>
 
       {/* ── 3. Layanan Utama ─────────────────────────────────────────────── */}
-      <section className="py-section-gap bg-surface">
-        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+      <section className="py-12 md:py-section-gap bg-surface">
+        <div className="max-w-container-max mx-auto px-6 md:px-12">
           <SectionHeader
             label="Layanan Digital"
             title="Layanan Utama"
@@ -253,8 +253,8 @@ export default async function Home() {
       </section>
 
       {/* ── 3.5 Berita & Pengumuman ───────────────────────────────────────── */}
-      <section className="py-section-gap bg-surface">
-        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+      <section className="py-12 md:py-section-gap bg-surface">
+        <div className="max-w-container-max mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             
             {/* Kiri: Berita Terbaru */}
@@ -364,8 +364,8 @@ export default async function Home() {
       </section>
 
       {/* ── 4. Produk Unggulan ───────────────────────────────────────────── */}
-      <section className="py-section-gap bg-surface-container-low">
-        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+      <section className="py-12 md:py-section-gap bg-surface-container-low">
+        <div className="max-w-container-max mx-auto px-6 md:px-12">
           <SectionHeader
             label="UMKM Lokal"
             title="Produk Unggulan"
@@ -410,8 +410,8 @@ export default async function Home() {
       </section>
 
       {/* ── 5. Dokumentasi Kegiatan ──────────────────────────────────────── */}
-      <section className="py-section-gap bg-surface">
-        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+      <section className="py-12 md:py-section-gap bg-surface">
+        <div className="max-w-container-max mx-auto px-6 md:px-12">
           <SectionHeader
             label="Galeri"
             title="Dokumentasi Kegiatan"
@@ -445,8 +445,8 @@ export default async function Home() {
       </section>
 
       {/* -- 6. Peta Lokasi ----------------------------------------------------- */}
-      <section className="py-section-gap bg-surface-container-lowest">
-        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+      <section className="py-12 md:py-section-gap bg-surface-container-lowest">
+        <div className="max-w-container-max mx-auto px-6 md:px-12">
           <SectionHeader
             label="Peta Wilayah"
             title="Lokasi Kecamatan Cigedug"
@@ -470,7 +470,7 @@ export default async function Home() {
 
       {/* -- 7. CTA Banner ------------------------------------------------------ */}
       <section className="bg-primary py-16">
-        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row items-center text-center md:text-left justify-between gap-6 md:gap-8">
+        <div className="max-w-container-max mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center text-center md:text-left justify-between gap-6 md:gap-8">
           <div>
             <h2 className="text-3xl md:text-headline-lg font-bold text-white mb-2">
               Ada keluhan atau aspirasi?
