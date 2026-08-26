@@ -146,33 +146,33 @@ export default function ProfilPage() {
             backgroundSize: "40px 40px",
           }}
         />
-        <div className="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-16 pt-32">
-          <nav className="flex items-center gap-2 text-white/60 text-label-md mb-6">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 pb-16 pt-32">
+          <nav className="flex items-center gap-2 text-white/60 text-sm md:text-label-md mb-6 flex-wrap">
             <a href="/" className="hover:text-white transition-colors">Beranda</a>
             <span className="material-symbols-outlined text-sm">chevron_right</span>
             <span className="text-white">Selayang Pandang</span>
           </nav>
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
-            <div>
-              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 mb-5">
-                <span className="material-symbols-outlined icon-filled text-sm text-tertiary-fixed-dim">location_on</span>
-                <span className="text-label-md text-white/90 tracking-widest uppercase">Kabupaten Garut &middot; Jawa Barat</span>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 md:gap-8">
+            <div className="w-full md:w-auto">
+              <div className="inline-flex items-center justify-center sm:justify-start gap-1.5 sm:gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 mb-4 sm:mb-5 max-w-full">
+                <span className="material-symbols-outlined icon-filled text-sm sm:text-base text-tertiary-fixed-dim shrink-0">location_on</span>
+                <span className="text-[10px] sm:text-xs md:text-sm text-white/90 tracking-wide sm:tracking-widest uppercase truncate sm:whitespace-normal">Kabupaten Garut &middot; Jawa Barat</span>
               </div>
-                <h1 className="text-display-lg text-white mb-4 max-w-2xl">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-4 max-w-2xl leading-[1.15]">
                   {content["profil.hero.title"] || "Selayang Pandang"}
                   <br />
                   <span className="text-primary-fixed-dim">Kecamatan Cigedug</span>
                 </h1>
-                <p className="text-body-lg text-white/75 max-w-xl leading-relaxed">
+                <p className="text-sm sm:text-base md:text-lg text-white/80 max-w-xl leading-relaxed">
                   {content["profil.deskripsi"] || "Kecamatan di lereng Gunung Cikuray yang sejuk, berjarak ±25 km dari pusat Kota Garut — kaya potensi pertanian, budaya, dan alam pegunungan."}
                 </p>
             </div>
-            <div className="shrink-0 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-6 py-5 text-white">
-              <p className="text-label-md text-white/60 uppercase tracking-wider mb-3">Koordinat</p>
-              <div className="space-y-1.5">
+            <div className="w-full md:w-auto shrink-0 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-5 sm:px-6 py-4 sm:py-5 text-white">
+              <p className="text-xs sm:text-sm text-white/60 uppercase tracking-wider mb-3">Koordinat</p>
+              <div className="space-y-2">
                 <div className="flex items-center gap-2">
                   <span className="material-symbols-outlined text-sm text-primary-fixed-dim">south</span>
-                  <span className="text-body-md font-mono">7&deg;20&prime;22&Prime; LS</span>
+                  <span className="text-sm sm:text-base font-mono">7&deg;20&prime;22&Prime; LS</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="material-symbols-outlined text-sm text-primary-fixed-dim">east</span>
@@ -186,7 +186,7 @@ export default function ProfilPage() {
 
       {/* 2. Sub-Nav Tabs */}
       <div className="bg-white border-b border-outline-variant sticky top-16 z-40 shadow-sm">
-        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+        <div className="max-w-container-max mx-auto px-6 md:px-12">
           <nav className="flex overflow-x-auto gap-1 py-2">
             {subNavLinks.map(({ href, label, icon, active }) => (
               <Link
@@ -206,8 +206,8 @@ export default function ProfilPage() {
       </div>
 
       {/* 3. Identitas Wilayah */}
-      <section className="py-section-gap bg-surface">
-        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+      <section className="py-12 md:py-section-gap bg-surface">
+        <div className="max-w-container-max mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3]">
@@ -266,8 +266,8 @@ export default function ProfilPage() {
       </section>
 
       {/* 4. Statistik */}
-      <section className="py-section-gap bg-primary">
-        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+      <section className="py-12 md:py-section-gap bg-primary">
+        <div className="max-w-container-max mx-auto px-6 md:px-12">
           <div className="text-center mb-12">
             <span className="inline-block text-label-md text-primary bg-primary-fixed px-4 py-1 rounded-full mb-4">Data Umum</span>
             <h2 className="text-headline-lg text-white">Kecamatan dalam Angka</h2>
@@ -288,8 +288,8 @@ export default function ProfilPage() {
       </section>
 
       {/* 5. Letak Geografis & Batas Wilayah */}
-      <section className="py-section-gap bg-surface-container-low">
-        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+      <section className="py-12 md:py-section-gap bg-surface-container-low">
+        <div className="max-w-container-max mx-auto px-6 md:px-12">
           <SectionHeader
             label="Geografis"
             icon="public"
@@ -413,8 +413,8 @@ export default function ProfilPage() {
       </section>
 
       {/* 6. Desa-desa */}
-      <section className="py-section-gap bg-surface">
-        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+      <section className="py-12 md:py-section-gap bg-surface">
+        <div className="max-w-container-max mx-auto px-6 md:px-12">
           <SectionHeader
             label="Wilayah Administrasi"
             icon="holiday_village"
@@ -488,8 +488,8 @@ export default function ProfilPage() {
       </section>
 
       {/* 7. Pemerintahan */}
-      <section className="py-section-gap bg-surface-container-low">
-        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+      <section className="py-12 md:py-section-gap bg-surface-container-low">
+        <div className="max-w-container-max mx-auto px-6 md:px-12">
           <SectionHeader
             label="Pemerintahan"
             icon="account_balance"
@@ -529,7 +529,7 @@ export default function ProfilPage() {
 
       {/* 8. CTA */}
       <section className="bg-primary py-16">
-        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="max-w-container-max mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
             <h2 className="text-headline-lg text-white mb-2">Jelajahi Lebih Lanjut</h2>
             <p className="text-body-lg text-white/70 max-w-lg">
