@@ -170,14 +170,14 @@ export default async function Home() {
             </span>
           </div>
 
-          <h1 className="text-display-lg text-white mb-6 max-w-3xl">
+          <h1 className="text-4xl sm:text-5xl md:text-display-lg font-extrabold text-white mb-4 md:mb-6 max-w-3xl leading-tight drop-shadow-lg px-2">
             {content["home.hero.title"] || "Portal Digital Kecamatan Cigedug"}
           </h1>
-          <p className="text-body-lg text-white/80 mb-10 max-w-2xl">
+          <p className="text-base sm:text-lg md:text-body-lg text-white/90 mb-8 md:mb-10 max-w-2xl px-4 md:px-0 drop-shadow-md">
             {content["home.hero.tagline"] || "Portal resmi untuk layanan publik, informasi pemerintahan, dan pengembangan potensi desa menuju masyarakat yang tertib, damai, dan sejahtera."}
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 w-full sm:w-auto px-6 sm:px-0">
             <Link
               href="/pelayanan"
               className="bg-white text-primary text-label-md px-8 py-3 rounded-full font-bold shadow-lg hover:bg-primary-fixed transition-colors duration-200 flex items-center gap-2 group"
@@ -470,18 +470,18 @@ export default async function Home() {
 
       {/* -- 7. CTA Banner ------------------------------------------------------ */}
       <section className="bg-primary py-16">
-        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row items-center text-center md:text-left justify-between gap-6 md:gap-8">
           <div>
-            <h2 className="text-headline-lg text-white mb-2">
+            <h2 className="text-3xl md:text-headline-lg font-bold text-white mb-2">
               Ada keluhan atau aspirasi?
             </h2>
-            <p className="text-body-lg text-white/70">
+            <p className="text-base md:text-body-lg text-white/80">
               Kami siap mendengar dan merespons setiap masukan dari masyarakat.
             </p>
           </div>
           <Link
             href="/pengaduan"
-            className="shrink-0 bg-white text-primary text-label-md px-8 py-3 rounded-full font-bold hover:bg-primary-fixed transition-colors duration-200 flex items-center gap-2"
+            className="w-full md:w-auto shrink-0 bg-white text-primary text-label-md px-8 py-3.5 rounded-full font-bold hover:bg-primary-fixed transition-colors duration-200 flex items-center justify-center gap-2 shadow-lg"
           >
             <span>Sampaikan Sekarang</span>
             <span className="material-symbols-outlined text-lg">arrow_forward</span>

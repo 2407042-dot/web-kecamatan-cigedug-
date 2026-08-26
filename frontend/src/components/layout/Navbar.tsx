@@ -107,11 +107,11 @@ export default function Navbar() {
             height={36}
             className="h-8 w-auto object-contain"
           />
-          <div className="flex flex-col border-l-2 border-outline-variant pl-3 whitespace-nowrap">
-            <span className="text-caption text-primary dark:text-primary-fixed-dim uppercase tracking-wider leading-tight">
+          <div className="flex flex-col border-l-2 border-outline-variant pl-2 md:pl-3 whitespace-nowrap">
+            <span className="hidden sm:block text-caption text-primary dark:text-primary-fixed-dim uppercase tracking-wider leading-tight">
               Pemerintah Kabupaten Garut
             </span>
-            <span className="text-label-md font-bold text-primary dark:text-primary-fixed-dim leading-tight">
+            <span className="text-label-md md:text-title-medium font-bold text-primary dark:text-primary-fixed-dim leading-tight">
               Kecamatan Cigedug
             </span>
           </div>
