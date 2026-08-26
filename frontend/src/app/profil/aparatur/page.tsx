@@ -171,7 +171,7 @@ export const dynamic = 'force-dynamic';
 export default async function AparaturPage() {
   let aparaturList = defaultAparaturList;
   try {
-    const res = await fetch("http://localhost:5000/api/aparatur", { cache: "no-store" });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || "${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}"}/api/aparatur`, { cache: "no-store" });
     const data = await res.json();
     if (data && data.length > 0) aparaturList = data;
   } catch (error) {}
@@ -290,7 +290,7 @@ export default async function AparaturPage() {
                         {/* Avatar */}
                         <div className={`w-14 h-14 ${col.bg} rounded-2xl flex items-center justify-center mb-4 shadow-md overflow-hidden relative`}>
                           {imageUrl ? (
-                            <Image src={`http://localhost:5000${imageUrl}`} alt={nama} fill className="object-cover" unoptimized />
+                            <Image src={`${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}${imageUrl}`} alt={nama} fill className="object-cover" unoptimized />
                           ) : (
                             <span className={`material-symbols-outlined icon-filled text-2xl ${col.text}`}>
                               {icon ?? "person"}

@@ -11,7 +11,7 @@ export interface Berita {
   folderName: string;
 }
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = `${process.env.NEXT_PUBLIC_BACKEND_URL || "${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}"}/api`;
 
 export async function getAllBerita(): Promise<Berita[]> {
   try {
@@ -29,7 +29,7 @@ export async function getAllBerita(): Promise<Berita[]> {
         title: b.title,
         date: new Date(b.createdAt).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' }),
         snippet: snippetText,
-        imageUrl: b.imageUrl ? (b.imageUrl.startsWith('http') ? b.imageUrl : `http://localhost:5000${b.imageUrl}`) : null,
+        imageUrl: b.imageUrl ? (b.imageUrl.startsWith('http') ? b.imageUrl : `${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}${b.imageUrl}`) : null,
         content: b.content,
         folderName: ''
       };

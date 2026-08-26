@@ -12,7 +12,7 @@ type Galeri = {
   description?: string;
 };
 
-const API_URL = "http://localhost:5000/api/galeri";
+const API_URL = `${process.env.NEXT_PUBLIC_BACKEND_URL || "${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}"}/api/galeri`;
 
 export default function GaleriClient() {
   const [galeriList, setGaleriList] = useState<Galeri[]>([]);
@@ -152,7 +152,7 @@ export default function GaleriClient() {
         {galeriList.map((item) => (
           <div key={item.id} className="border border-outline-variant/40 rounded-xl overflow-hidden shadow-sm flex flex-col">
             <div className={`relative w-full aspect-video bg-surface-container`}>
-              <Image src={item.img.startsWith('/uploads') ? `http://localhost:5000${item.img}` : item.img} alt={item.title} fill className="object-cover" unoptimized />
+              <Image src={item.img.startsWith('/uploads') ? `${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}${item.img}` : item.img} alt={item.title} fill className="object-cover" unoptimized />
             </div>
             <div className="p-4 flex flex-col flex-grow">
               <span className="text-xs font-bold text-primary mb-1 uppercase tracking-wider">{item.category}</span>

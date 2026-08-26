@@ -12,7 +12,7 @@ type Inovasi = {
   imageUrl?: string;
 };
 
-const API_URL = "http://localhost:5000/api/inovasi";
+const API_URL = `${process.env.NEXT_PUBLIC_BACKEND_URL || "${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}"}/api/inovasi`;
 
 export default function InovasiClient() {
   const [inovasiList, setInovasiList] = useState<Inovasi[]>([]);
@@ -171,7 +171,7 @@ export default function InovasiClient() {
                 <td className="px-4 py-3">
                   <div className="w-12 h-12 bg-slate-200 rounded-lg overflow-hidden relative border border-slate-300 flex items-center justify-center">
                     {item.imageUrl ? (
-                      <Image src={`http://localhost:5000${item.imageUrl}`} alt={item.title} fill className="object-cover" unoptimized />
+                      <Image src={`${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}${item.imageUrl}`} alt={item.title} fill className="object-cover" unoptimized />
                     ) : (
                       <span className="material-symbols-outlined text-slate-400">image</span>
                     )}

@@ -48,7 +48,7 @@ export default function ProdukClient({ initialData }: { initialData: ProdukUnggu
     const formData = new FormData();
     formData.append("file", file);
 
-    const res = await fetch("http://localhost:5000/api/upload", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || "${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}"}/api/upload`, {
       method: "POST",
       body: formData,
     });

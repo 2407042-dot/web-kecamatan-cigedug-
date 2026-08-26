@@ -3,7 +3,7 @@ export const dynamic = "force-dynamic";
 export default async function AdminDashboardPage() {
   let stats = { berita: 0, dataset: 0, produk: 0 };
   try {
-    const res = await fetch("http://localhost:5000/api/stats", { cache: "no-store" });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || "${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}"}/api/stats`, { cache: "no-store" });
     if (res.ok) stats = await res.json();
   } catch { /* backend offline */ }
 
