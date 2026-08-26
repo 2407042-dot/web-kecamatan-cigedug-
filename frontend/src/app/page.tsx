@@ -161,26 +161,26 @@ export default async function Home() {
         <HeroVideoCarousel videos={homeVideos} />
 
         {/* Content */}
-        <div className="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center flex flex-col items-center pt-28 pb-20">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 text-center flex flex-col items-center pt-28 pb-20">
           {/* Badge */}
-          <div className="flex items-center gap-2 mb-6 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5">
-            <span className="material-symbols-outlined icon-filled text-base text-yellow-300">star</span>
-            <span className="text-label-md text-white/90 tracking-widest uppercase">
-              {content["home.hero.subtitle"] || "Pemerintah Kabupaten Garut"}
+          <div className="flex items-center justify-center gap-1.5 sm:gap-2 mb-4 sm:mb-6 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 py-1.5 max-w-full">
+            <span className="material-symbols-outlined icon-filled text-sm sm:text-base text-yellow-300 shrink-0">star</span>
+            <span className="text-[10px] sm:text-xs md:text-sm text-white/90 tracking-wide sm:tracking-widest uppercase truncate sm:whitespace-normal">
+              {content["home.hero.subtitle"] || "KABUPATEN GARUT, JAWA BARAT"}
             </span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-display-lg font-extrabold text-white mb-4 md:mb-6 max-w-3xl leading-tight drop-shadow-lg px-2">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-4 md:mb-6 max-w-4xl leading-[1.15] drop-shadow-lg">
             {content["home.hero.title"] || "Portal Digital Kecamatan Cigedug"}
           </h1>
-          <p className="text-base sm:text-lg md:text-body-lg text-white/90 mb-8 md:mb-10 max-w-2xl px-4 md:px-0 drop-shadow-md">
-            {content["home.hero.tagline"] || "Portal resmi untuk layanan publik, informasi pemerintahan, dan pengembangan potensi desa menuju masyarakat yang tertib, damai, dan sejahtera."}
+          <p className="text-sm sm:text-base md:text-lg text-white/90 mb-8 md:mb-10 max-w-2xl drop-shadow-md leading-relaxed">
+            {content["home.hero.tagline"] || "Melayani dengan sepenuh hati untuk masyarakat yang maju, mandiri, dan sejahtera."}
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 w-full sm:w-auto px-6 sm:px-0">
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 w-full sm:w-auto max-w-xs sm:max-w-none mx-auto">
             <Link
               href="/pelayanan"
-              className="bg-white text-primary text-label-md px-8 py-3 rounded-full font-bold shadow-lg hover:bg-primary-fixed transition-colors duration-200 flex items-center gap-2 group"
+              className="w-full sm:w-auto justify-center bg-white text-primary text-sm sm:text-base px-6 sm:px-8 py-3.5 rounded-full font-bold shadow-lg hover:bg-primary-fixed transition-all duration-200 flex items-center gap-2 group"
             >
               <span>Lihat Pelayanan</span>
               <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">
@@ -189,7 +189,7 @@ export default async function Home() {
             </Link>
             <Link
               href="/profil"
-              className="border-2 border-white/50 hover:border-white text-white text-label-md px-8 py-3 rounded-full transition-colors duration-200 backdrop-blur-sm"
+              className="w-full sm:w-auto justify-center flex items-center border-2 border-white/50 hover:border-white text-white text-sm sm:text-base px-6 sm:px-8 py-3.5 rounded-full transition-all duration-200 backdrop-blur-sm"
             >
               Jelajahi Kecamatan
             </Link>
