@@ -12,7 +12,7 @@ type Inovasi = {
   imageUrl?: string;
 };
 
-const API_URL = `${process.env.NEXT_PUBLIC_BACKEND_URL || "${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}"}/api/inovasi`;
+const API_URL = `${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}/api/inovasi`;
 
 export default function InovasiClient() {
   const [inovasiList, setInovasiList] = useState<Inovasi[]>([]);

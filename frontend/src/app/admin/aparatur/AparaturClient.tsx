@@ -14,7 +14,7 @@ type Aparatur = {
   imageUrl?: string;
 };
 
-const API_URL = `${process.env.NEXT_PUBLIC_BACKEND_URL || "${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}"}/api/aparatur`;
+const API_URL = `${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}/api/aparatur`;
 
 export default function AparaturClient() {
   const [aparaturList, setAparaturList] = useState<Aparatur[]>([]);

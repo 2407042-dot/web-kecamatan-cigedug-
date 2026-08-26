@@ -93,7 +93,7 @@ export default function PengaduanPage() {
 
     // 2. Real API Call
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || "${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}"}/api/pengaduan`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}/api/pengaduan`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ judul: sanitizedJudul, pesan: sanitizedPesan }),

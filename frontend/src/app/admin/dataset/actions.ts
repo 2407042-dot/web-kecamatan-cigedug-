@@ -2,7 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 
-const API_URL = `${process.env.NEXT_PUBLIC_BACKEND_URL || "${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}"}/api`;
+const API_URL = `${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}/api`;
 
 export async function saveDataset(id: string | null, data: { title: string; description: string; category: string; fileCsv: string; sizeCsv: string; filePdf: string; sizePdf: string }) {
   let res;

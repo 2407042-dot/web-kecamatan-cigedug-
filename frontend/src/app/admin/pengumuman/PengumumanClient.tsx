@@ -14,7 +14,7 @@ type Pengumuman = {
   fileSize?: string;
 };
 
-const API_URL = `${process.env.NEXT_PUBLIC_BACKEND_URL || "${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}"}/api/pengumuman`;
+const API_URL = `${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}/api/pengumuman`;
 
 export default function PengumumanClient() {
   const [pengumumanList, setPengumumanList] = useState<Pengumuman[]>([]);

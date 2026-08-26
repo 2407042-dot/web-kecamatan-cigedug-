@@ -30,7 +30,7 @@ const COLOR_OPTIONS = [
   { label: "Ungu (Violet)", value: "from-violet-400 to-purple-600" },
 ];
 
-const API_URL = `${process.env.NEXT_PUBLIC_BACKEND_URL || "${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}"}/api/penghargaan`;
+const API_URL = `${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}/api/penghargaan`;
 
 export default function PenghargaanClient() {
   const [list, setList] = useState<Penghargaan[]>([]);

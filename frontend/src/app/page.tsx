@@ -119,19 +119,19 @@ export default async function Home() {
   let galeriList: any[] = [];
 
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || "${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}"}/api/pengumuman`, { cache: "no-store" });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}/api/pengumuman`, { cache: "no-store" });
     const data = await res.json();
     if (data && Array.isArray(data)) pengumumanList = data;
   } catch (error) {}
 
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || "${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}"}/api/produk`, { cache: "no-store" });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}/api/produk`, { cache: "no-store" });
     const data = await res.json();
     if (data && data.length > 0) produkList = data.slice(0, 4);
   } catch (error) {}
 
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || "${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}"}/api/galeri`, { cache: "no-store" });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}/api/galeri`, { cache: "no-store" });
     const data = await res.json();
     if (data && data.length > 0) galeriList = data.slice(0, 7);
   } catch (error) {}

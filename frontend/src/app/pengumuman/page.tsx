@@ -35,7 +35,7 @@ export const dynamic = 'force-dynamic';
 export default async function PengumumanPage() {
   let pengumumanList = fallbackPengumuman;
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || "${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}"}/api/pengumuman`, { cache: "no-store" });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}/api/pengumuman`, { cache: "no-store" });
     const data = await res.json();
     if (data && data.length > 0) pengumumanList = data;
   } catch (error) {}

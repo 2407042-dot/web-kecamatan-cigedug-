@@ -21,7 +21,7 @@ export const dynamic = 'force-dynamic';
 export default async function PenghargaanPage() {
   let penghargaanList: PenghargaanItem[] = [];
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || "${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}"}/api/penghargaan`, { cache: 'no-store' });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}/api/penghargaan`, { cache: 'no-store' });
     const data = await res.json();
     if (Array.isArray(data)) penghargaanList = data;
   } catch (error) {}

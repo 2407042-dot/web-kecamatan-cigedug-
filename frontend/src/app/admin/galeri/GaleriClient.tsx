@@ -12,7 +12,7 @@ type Galeri = {
   description?: string;
 };
 
-const API_URL = `${process.env.NEXT_PUBLIC_BACKEND_URL || "${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}"}/api/galeri`;
+const API_URL = `${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}/api/galeri`;
 
 export default function GaleriClient() {
   const [galeriList, setGaleriList] = useState<Galeri[]>([]);

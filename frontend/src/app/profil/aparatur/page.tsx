@@ -171,7 +171,7 @@ export const dynamic = 'force-dynamic';
 export default async function AparaturPage() {
   let aparaturList = defaultAparaturList;
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || "${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}"}/api/aparatur`, { cache: "no-store" });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}/api/aparatur`, { cache: "no-store" });
     const data = await res.json();
     if (data && data.length > 0) aparaturList = data;
   } catch (error) {}

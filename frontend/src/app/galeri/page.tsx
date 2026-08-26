@@ -70,7 +70,7 @@ export default async function GaleriPage() {
   const content = getSiteContent();
   let galeriList: GaleriItem[] = defaultGaleri;
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || "${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}"}/api/galeri`, { cache: 'no-store' });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}/api/galeri`, { cache: 'no-store' });
     if (res.ok) {
       const data = await res.json();
       if (Array.isArray(data) && data.length > 0) galeriList = data;

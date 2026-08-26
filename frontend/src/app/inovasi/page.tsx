@@ -11,7 +11,7 @@ export const dynamic = 'force-dynamic';
 export default async function InovasiPage() {
   let inovasiList: any[] = [];
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || "${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}"}/api/inovasi`, { cache: "no-store" });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}/api/inovasi`, { cache: "no-store" });
     if (res.ok) {
       inovasiList = await res.json();
     }
