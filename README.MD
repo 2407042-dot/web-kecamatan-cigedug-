@@ -89,3 +89,4 @@ Untuk mengelola website, buka `http://localhost:3000/admin/login` menggunakan kr
 ## ⚖️ Lisensi
 
 Dikembangkan secara khusus untuk keperluan operasional **Kecamatan Cigedug, Kabupaten Garut**. Seluruh aset foto dan data kependudukan merupakan hak milik Pemerintah Kecamatan Cigedug.
+rjoihih ayeiwa heiwah

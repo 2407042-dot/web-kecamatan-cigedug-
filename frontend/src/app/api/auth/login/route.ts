@@ -1,8 +1,6 @@
 import { NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 
-const ADMIN_USERNAME = process.env.ADMIN_USERNAME || 'admin';
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'password123';
 const SESSION_SECRET = process.env.SESSION_SECRET || 'fallback-secret-key';
 
 // Buat token session yang lebih kuat (username + secret + timestamp)
@@ -10,7 +8,7 @@ function generateToken(username: string): string {
   const timestamp = Date.now();
   const raw = `${username}:${timestamp}:${SESSION_SECRET}`;
   // Base64 encode sebagai "tanda tangan" sederhana
-  return Buffer.from(raw).toString('base64');
+  return btoa(raw);
 }
 
 export async function POST(request: Request) {
@@ -21,7 +19,14 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Username dan password wajib diisi' }, { status: 400 });
     }
 
-    if (username !== ADMIN_USERNAME || password !== ADMIN_PASSWORD) {
+    // Verify credentials against the backend API
+    const backendRes = await fetch('http://localhost:5000/api/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, password })
+    });
+
+    if (!backendRes.ok) {
       // Delay kecil untuk mencegah brute force
       await new Promise(r => setTimeout(r, 800));
       return NextResponse.json({ error: 'Username atau password salah' }, { status: 401 });

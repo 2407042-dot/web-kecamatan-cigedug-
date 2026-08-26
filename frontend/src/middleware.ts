@@ -6,7 +6,7 @@ const SESSION_SECRET = process.env.SESSION_SECRET || 'fallback-secret-key';
 function isValidToken(token: string): boolean {
   try {
     // Decode token dan verifikasi format serta secret
-    const decoded = Buffer.from(token, 'base64').toString('utf-8');
+    const decoded = atob(token);
     const parts = decoded.split(':');
     
     // Format: username:timestamp:secret
