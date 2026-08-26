@@ -69,7 +69,7 @@ function parseMappedCSV(csvText: string): MappedData[] {
 
 export default async function InfografisPage() {
   // 1. Read Demographics
-  const popPath = path.join(process.cwd(), '../data set/Jumlah Penduduk Per Desa di Kecamatan Cigedug.csv');
+  const popPath = path.join(process.cwd(), 'src/data/dataset/Jumlah Penduduk Per Desa di Kecamatan Cigedug.csv');
   let popData: PopulationData[] = [];
   try {
     if (fs.existsSync(popPath)) {
@@ -81,7 +81,7 @@ export default async function InfografisPage() {
   }
 
   // 2. Read Mapped Facilities (KKN)
-  const mapPath = path.join(process.cwd(), 'public/Data_Pemetaan_KKN_Cigedug.csv');
+  const mapPath = path.join(process.cwd(), 'src/data/Data_Pemetaan_KKN_Cigedug.csv');
   let mapData: MappedData[] = [];
   try {
     if (fs.existsSync(mapPath)) {
@@ -93,7 +93,7 @@ export default async function InfografisPage() {
   }
 
   // 3. Read Additional Facilities (Admin JSON)
-  const jsonPath = path.join(process.cwd(), 'public/Data_Fasilitas.json');
+  const jsonPath = path.join(process.cwd(), 'src/data/Data_Fasilitas.json');
   try {
     if (fs.existsSync(jsonPath)) {
       const jsonContent = fs.readFileSync(jsonPath, 'utf8');
