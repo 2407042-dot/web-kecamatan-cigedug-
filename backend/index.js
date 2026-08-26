@@ -15,18 +15,55 @@ app.use(cors());
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-// Multer Setup
-const uploadDir = path.join(__dirname, 'uploads');
-if (!fs.existsSync(uploadDir)) {
-  fs.mkdirSync(uploadDir);
+// === SUPABASE / MULTER SETUP ===
+const { createClient } = require('@supabase/supabase-js');
+const supabaseUrl = process.env.SUPABASE_URL || '';
+const supabaseKey = process.env.SUPABASE_KEY || '';
+const supabase = supabaseUrl && supabaseKey ? createClient(supabaseUrl, supabaseKey) : null;
+
+function SupabaseStorage(opts) {
+  this.bucket = opts.bucket || 'uploads';
 }
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => cb(null, uploadDir),
-  filename: (req, file, cb) => {
-    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-    cb(null, uniqueSuffix + '-' + file.originalname.replace(/\s+/g, '_'));
+SupabaseStorage.prototype._handleFile = function _handleFile(req, file, cb) {
+  const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+  const filename = uniqueSuffix + '-' + file.originalname.replace(/\s+/g, '_');
+  
+  if (supabase) {
+    const chunks = [];
+    file.stream.on('data', chunk => chunks.push(chunk));
+    file.stream.on('end', async () => {
+      const buffer = Buffer.concat(chunks);
+      try {
+        const { error } = await supabase.storage.from(this.bucket).upload(filename, buffer, {
+          contentType: file.mimetype
+        });
+        if (error) throw error;
+        const { data: publicUrlData } = supabase.storage.from(this.bucket).getPublicUrl(filename);
+        cb(null, { filename, path: publicUrlData.publicUrl, size: buffer.length });
+      } catch (err) {
+        cb(err);
+      }
+    });
+    file.stream.on('error', cb);
+  } else {
+    // Fallback to local
+    const fs = require('fs');
+    const path = require('path');
+    const outPath = path.join(__dirname, 'uploads', filename);
+    const outStream = fs.createWriteStream(outPath);
+    file.stream.pipe(outStream);
+    outStream.on('error', cb);
+    outStream.on('finish', () => {
+      cb(null, { filename, path: `/uploads/${filename}`, size: outStream.bytesWritten });
+    });
   }
-});
+};
+SupabaseStorage.prototype._removeFile = function _removeFile(req, file, cb) { cb(null); };
+
+const uploadDir = path.join(__dirname, 'uploads');
+if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir);
+
+const storage = new SupabaseStorage({ bucket: 'uploads' });
 const upload = multer({ storage });
 
 // === AUTH API ===
@@ -86,7 +123,7 @@ app.post('/api/upload', upload.single('file'), (req, res) => {
     return res.status(400).json({ error: 'No file uploaded' });
   }
   // The URL accessible from the frontend will be http://localhost:5000/uploads/filename
-  res.json({ success: true, url: `http://localhost:${port}/uploads/${req.file.filename}` });
+  res.json({ success: true, url: req.file.path });
 });
 
 // === BERITA API ===
@@ -184,7 +221,7 @@ app.post('/api/pengumuman', upload.single('file'), async (req, res) => {
     let fileUrl = '';
     let fileSize = '';
     if (req.file) {
-      fileUrl = `/uploads/${req.file.filename}`;
+      fileUrl = req.file.path;
       fileSize = (req.file.size / (1024 * 1024)).toFixed(2) + ' MB'; // Convert to MB
     }
     const data = await prisma.pengumuman.create({
@@ -215,7 +252,7 @@ app.put('/api/pengumuman/:id', upload.single('file'), async (req, res) => {
       isPinned: isPinned === 'true'
     };
     if (req.file) {
-      dataObj.fileUrl = `/uploads/${req.file.filename}`;
+      dataObj.fileUrl = req.file.path;
       dataObj.fileSize = (req.file.size / (1024 * 1024)).toFixed(2) + ' MB';
     }
     const data = await prisma.pengumuman.update({
@@ -405,7 +442,7 @@ app.get('/api/aparatur', async (req, res) => {
 app.post('/api/aparatur', upload.single('image'), async (req, res) => {
   try {
     const dataObj = { ...req.body };
-    if (req.file) dataObj.imageUrl = `/uploads/${req.file.filename}`;
+    if (req.file) dataObj.imageUrl = req.file.path;
     const data = await prisma.aparatur.create({ data: dataObj });
     res.json(data);
   } catch (error) {
@@ -417,7 +454,7 @@ app.post('/api/aparatur', upload.single('image'), async (req, res) => {
 app.put('/api/aparatur/:id', upload.single('image'), async (req, res) => {
   try {
     const dataObj = { ...req.body };
-    if (req.file) dataObj.imageUrl = `/uploads/${req.file.filename}`;
+    if (req.file) dataObj.imageUrl = req.file.path;
     const data = await prisma.aparatur.update({
       where: { id: req.params.id },
       data: dataObj
@@ -450,7 +487,7 @@ app.get('/api/galeri', async (req, res) => {
 app.post('/api/galeri', upload.single('image'), async (req, res) => {
   try {
     const { title, category, aspectRatio, description } = req.body;
-    const img = req.file ? `/uploads/${req.file.filename}` : '';
+    const img = req.file ? req.file.path : '';
     const data = await prisma.galeri.create({
       data: { title, category, aspectRatio, description, img }
     });
@@ -464,7 +501,7 @@ app.put('/api/galeri/:id', upload.single('image'), async (req, res) => {
   try {
     const { title, category, aspectRatio, description } = req.body;
     const dataObj = { title, category, aspectRatio, description };
-    if (req.file) dataObj.img = `/uploads/${req.file.filename}`;
+    if (req.file) dataObj.img = req.file.path;
     const data = await prisma.galeri.update({
       where: { id: req.params.id },
       data: dataObj
@@ -541,7 +578,7 @@ app.get('/api/penghargaan', async (req, res) => {
 app.post('/api/penghargaan', upload.single('image'), async (req, res) => {
   try {
     const { title, year, category, description, color } = req.body;
-    const imageUrl = req.file ? `/uploads/${req.file.filename}` : null;
+    const imageUrl = req.file ? req.file.path : null;
     const data = await prisma.penghargaan.create({
       data: { title, year, category, description, imageUrl, color: color || 'from-amber-400 to-orange-500' }
     });
@@ -555,7 +592,7 @@ app.put('/api/penghargaan/:id', upload.single('image'), async (req, res) => {
   try {
     const { title, year, category, description, color } = req.body;
     const dataObj = { title, year, category, description, color };
-    if (req.file) dataObj.imageUrl = `/uploads/${req.file.filename}`;
+    if (req.file) dataObj.imageUrl = req.file.path;
     const data = await prisma.penghargaan.update({
       where: { id: req.params.id },
       data: dataObj
@@ -588,7 +625,7 @@ app.post('/api/inovasi', upload.single('image'), async (req, res) => {
   try {
     const { title, date, description, content } = req.body;
     const dataObj = { title, date, description, content };
-    if (req.file) dataObj.imageUrl = `/uploads/${req.file.filename}`;
+    if (req.file) dataObj.imageUrl = req.file.path;
     const data = await prisma.inovasi.create({ data: dataObj });
     res.json(data);
   } catch (error) {
@@ -599,7 +636,7 @@ app.put('/api/inovasi/:id', upload.single('image'), async (req, res) => {
   try {
     const { title, date, description, content } = req.body;
     const dataObj = { title, date, description, content };
-    if (req.file) dataObj.imageUrl = `/uploads/${req.file.filename}`;
+    if (req.file) dataObj.imageUrl = req.file.path;
     const data = await prisma.inovasi.update({
       where: { id: req.params.id },
       data: dataObj
