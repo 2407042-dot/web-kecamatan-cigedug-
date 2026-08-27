@@ -27,9 +27,6 @@ export async function POST(request: Request) {
 
     if (username === envUser && password === envPass) {
       isAuthenticated = true;
-    } else if (username === 'admin' && password === 'password123') {
-      // Fallback default password just in case
-      isAuthenticated = true;
     } else {
       // Optional: Verify credentials against the backend API if env check fails
       try {
