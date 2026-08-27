@@ -14,7 +14,7 @@ type Aparatur = {
   imageUrl?: string;
 };
 
-const API_URL = `${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}/api/aparatur`;
+const API_URL = `${process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || "https://api-desa-cigedug.onrender.com"}/api/aparatur`;
 
 export default function AparaturClient() {
   const [aparaturList, setAparaturList] = useState<Aparatur[]>([]);
@@ -179,7 +179,7 @@ export default function AparaturClient() {
                 <td className="p-4">
                   {item.imageUrl ? (
                     <div className="w-12 h-12 rounded-full overflow-hidden relative">
-                      <Image src={`${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}${item.imageUrl}`} alt={item.nama} fill className="object-cover" unoptimized />
+                      <Image src={`${process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || "https://api-desa-cigedug.onrender.com"}${item.imageUrl}`} alt={item.nama} fill className="object-cover" unoptimized />
                     </div>
                   ) : (
                     <div className="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center">

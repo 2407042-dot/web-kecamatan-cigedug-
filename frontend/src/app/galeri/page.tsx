@@ -70,7 +70,7 @@ export default async function GaleriPage() {
   const content = getSiteContent();
   let galeriList: GaleriItem[] = defaultGaleri;
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}/api/galeri`, { cache: 'no-store' });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || "https://api-desa-cigedug.onrender.com"}/api/galeri`, { cache: 'no-store' });
     if (res.ok) {
       const data = await res.json();
       if (Array.isArray(data) && data.length > 0) galeriList = data;
@@ -128,7 +128,7 @@ export default async function GaleriPage() {
             >
               <div className={`relative w-full ${item.aspectRatio}`}>
                 <Image
-                  src={item.img.startsWith('/uploads') ? `${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}${item.img}` : item.img}
+                  src={item.img.startsWith('/uploads') ? `${process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || "https://api-desa-cigedug.onrender.com"}${item.img}` : item.img}
                   alt={item.title}
                   fill
                   unoptimized

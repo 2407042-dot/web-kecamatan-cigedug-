@@ -35,7 +35,7 @@ export const dynamic = 'force-dynamic';
 export default async function PengumumanPage() {
   let pengumumanList = fallbackPengumuman;
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}/api/pengumuman`, { cache: "no-store" });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || "https://api-desa-cigedug.onrender.com"}/api/pengumuman`, { cache: "no-store" });
     const data = await res.json();
     if (data && data.length > 0) pengumumanList = data;
   } catch (error) {}
@@ -109,7 +109,7 @@ export default async function PengumumanPage() {
                 </p>
                 <div className="mt-auto flex flex-wrap gap-4">
                   {item.fileUrl && (
-                    <a href={`${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}${item.fileUrl}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-primary hover:text-primary-container font-semibold text-sm bg-primary/10 hover:bg-primary/20 px-4 py-2 rounded-full transition-colors">
+                    <a href={`${process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || "https://api-desa-cigedug.onrender.com"}${item.fileUrl}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-primary hover:text-primary-container font-semibold text-sm bg-primary/10 hover:bg-primary/20 px-4 py-2 rounded-full transition-colors">
                       <span className="material-symbols-outlined text-base">download</span>
                       Unduh Lampiran {item.fileSize ? `(${item.fileSize})` : ""}
                     </a>

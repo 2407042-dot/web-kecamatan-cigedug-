@@ -50,7 +50,7 @@ export default function DatasetClient({ initialData }: { initialData: Dataset[] 
     const formData = new FormData();
     formData.append("file", file);
 
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}/api/upload`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || "https://api-desa-cigedug.onrender.com"}/api/upload`, {
       method: "POST",
       body: formData,
     });

@@ -11,7 +11,7 @@ export const dynamic = 'force-dynamic';
 export default async function InovasiPage() {
   let inovasiList: any[] = [];
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}/api/inovasi`, { cache: "no-store" });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || "https://api-desa-cigedug.onrender.com"}/api/inovasi`, { cache: "no-store" });
     if (res.ok) {
       inovasiList = await res.json();
     }
@@ -53,7 +53,7 @@ export default async function InovasiPage() {
                 <div className="relative w-full aspect-video bg-surface-container overflow-hidden shrink-0">
                   {inovasi.imageUrl ? (
                     <Image
-                      src={`${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}${inovasi.imageUrl}`}
+                      src={`${process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || "https://api-desa-cigedug.onrender.com"}${inovasi.imageUrl}`}
                       alt={inovasi.title}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"

@@ -21,7 +21,7 @@ export const dynamic = 'force-dynamic';
 export default async function PenghargaanPage() {
   let penghargaanList: PenghargaanItem[] = [];
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}/api/penghargaan`, { cache: 'no-store' });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || "https://api-desa-cigedug.onrender.com"}/api/penghargaan`, { cache: 'no-store' });
     const data = await res.json();
     if (Array.isArray(data)) penghargaanList = data;
   } catch (error) {}
@@ -65,7 +65,7 @@ export default async function PenghargaanPage() {
               <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-6 shadow-md border border-outline-variant/20 bg-surface-container">
                 {item.imageUrl ? (
                   <Image
-                    src={`${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}${item.imageUrl}`}
+                    src={`${process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || "https://api-desa-cigedug.onrender.com"}${item.imageUrl}`}
                     alt={item.title}
                     fill
                     unoptimized

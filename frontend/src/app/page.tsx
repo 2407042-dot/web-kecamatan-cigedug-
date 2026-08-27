@@ -119,19 +119,19 @@ export default async function Home() {
   let galeriList: any[] = [];
 
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}/api/pengumuman`, { cache: "no-store" });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || "https://api-desa-cigedug.onrender.com"}/api/pengumuman`, { cache: "no-store" });
     const data = await res.json();
     if (data && Array.isArray(data)) pengumumanList = data;
   } catch (error) {}
 
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}/api/produk`, { cache: "no-store" });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || "https://api-desa-cigedug.onrender.com"}/api/produk`, { cache: "no-store" });
     const data = await res.json();
     if (data && data.length > 0) produkList = data.slice(0, 4);
   } catch (error) {}
 
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}/api/galeri`, { cache: "no-store" });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || "https://api-desa-cigedug.onrender.com"}/api/galeri`, { cache: "no-store" });
     const data = await res.json();
     if (data && data.length > 0) galeriList = data.slice(0, 7);
   } catch (error) {}
@@ -386,7 +386,7 @@ export default async function Home() {
                     height={208}
                     unoptimized
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    src={(imageUrl ? `${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}${imageUrl}` : null) || src || "/images/placeholder.png"}
+                    src={(imageUrl ? `${process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || "https://api-desa-cigedug.onrender.com"}${imageUrl}` : null) || src || "/images/placeholder.png"}
                   />
                   {/* Tag badge */}
                   <span className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-primary text-caption font-semibold px-3 py-1 rounded-full">
@@ -432,7 +432,7 @@ export default async function Home() {
                   height={i % 3 === 2 ? 480 : 300}
                   unoptimized
                   className="w-full object-cover hover:scale-105 transition-transform duration-500"
-                  src={(img ? `${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}${img}` : null) || src || "/images/placeholder.png"}
+                  src={(img ? `${process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || "https://api-desa-cigedug.onrender.com"}${img}` : null) || src || "/images/placeholder.png"}
                 />
               </div>
             )) : (

@@ -3,7 +3,7 @@ import BeritaClient from "./BeritaClient";
 export const dynamic = "force-dynamic";
 
 export default async function BeritaPage() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}/api/berita`, { cache: 'no-store' });
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || "https://api-desa-cigedug.onrender.com"}/api/berita`, { cache: 'no-store' });
   const berita = await res.json().catch(() => []);
 
 

@@ -24,7 +24,7 @@ const emptyForm = {
   description: "",
 };
 
-const API_URL = `${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000"}/api/agenda`;
+const API_URL = `${process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || "https://api-desa-cigedug.onrender.com"}/api/agenda`;
 
 export default function AgendaClient() {
   const [agendaList, setAgendaList] = useState<Agenda[]>([]);
