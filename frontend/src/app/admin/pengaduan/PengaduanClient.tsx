@@ -10,7 +10,7 @@ type Pengaduan = {
   createdAt: string;
 };
 
-const API_URL = `${process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || "https://api-desa-cigedug.onrender.com"}/api/pengaduan`;
+const API_URL = `${process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || "https://web-kecamatan-cigedug-backend-five.vercel.app"}/api/pengaduan`;
 
 export default function PengaduanClient() {
   const [pengaduanList, setPengaduanList] = useState<Pengaduan[]>([]);

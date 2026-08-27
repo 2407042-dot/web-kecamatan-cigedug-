@@ -23,7 +23,7 @@ type Dataset = {
 };
 
 export default async function DatasetPage() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || "https://api-desa-cigedug.onrender.com"}/api/dataset`, { cache: "no-store" }).catch(() => null);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || "https://web-kecamatan-cigedug-backend-five.vercel.app"}/api/dataset`, { cache: "no-store" }).catch(() => null);
   let datasets: Dataset[] = [];
   if (res && res.ok) {
     const json = await res.json().catch(() => null);

@@ -48,7 +48,7 @@ export default function ProdukClient({ initialData }: { initialData: ProdukUnggu
     const formData = new FormData();
     formData.append("file", file);
 
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || "https://api-desa-cigedug.onrender.com"}/api/upload`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || "https://web-kecamatan-cigedug-backend-five.vercel.app"}/api/upload`, {
       method: "POST",
       body: formData,
     });

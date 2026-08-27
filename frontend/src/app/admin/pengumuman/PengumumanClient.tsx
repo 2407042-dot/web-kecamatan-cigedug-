@@ -14,7 +14,7 @@ type Pengumuman = {
   fileSize?: string;
 };
 
-const API_URL = `${process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || "https://api-desa-cigedug.onrender.com"}/api/pengumuman`;
+const API_URL = `${process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || "https://web-kecamatan-cigedug-backend-five.vercel.app"}/api/pengumuman`;
 
 export default function PengumumanClient() {
   const [pengumumanList, setPengumumanList] = useState<Pengumuman[]>([]);

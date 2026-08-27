@@ -24,7 +24,7 @@ type Produk = {
 export default async function PotensiPage() {
   const content = getSiteContent();
 
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || "https://api-desa-cigedug.onrender.com"}/api/produk`, { cache: 'no-store' });
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || "https://web-kecamatan-cigedug-backend-five.vercel.app"}/api/produk`, { cache: 'no-store' });
   const potensiListDb: Produk[] = await res.json().catch(() => []);
 
 

@@ -21,7 +21,7 @@ export const dynamic = 'force-dynamic';
 export default async function AgendaPage() {
   let agendaList: AgendaItem[] = [];
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || "https://api-desa-cigedug.onrender.com"}/api/agenda`, { cache: 'no-store' });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || "https://web-kecamatan-cigedug-backend-five.vercel.app"}/api/agenda`, { cache: 'no-store' });
     const data = await res.json();
     if (Array.isArray(data)) agendaList = data;
   } catch (error) {}

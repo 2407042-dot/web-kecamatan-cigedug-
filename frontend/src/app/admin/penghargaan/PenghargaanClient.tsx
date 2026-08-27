@@ -30,7 +30,7 @@ const COLOR_OPTIONS = [
   { label: "Ungu (Violet)", value: "from-violet-400 to-purple-600" },
 ];
 
-const API_URL = `${process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || "https://api-desa-cigedug.onrender.com"}/api/penghargaan`;
+const API_URL = `${process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || "https://web-kecamatan-cigedug-backend-five.vercel.app"}/api/penghargaan`;
 
 export default function PenghargaanClient() {
   const [list, setList] = useState<Penghargaan[]>([]);
@@ -204,7 +204,7 @@ export default function PenghargaanClient() {
             <div className="aspect-video relative bg-slate-100">
               {item.imageUrl ? (
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || "https://api-desa-cigedug.onrender.com"}${item.imageUrl}`}
+                  src={`${process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || "https://web-kecamatan-cigedug-backend-five.vercel.app"}${item.imageUrl}`}
                   alt={item.title}
                   fill className="object-cover" unoptimized
                 />

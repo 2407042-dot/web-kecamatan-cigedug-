@@ -3,7 +3,7 @@ import ProdukClient from "./ProdukClient";
 export const dynamic = "force-dynamic";
 
 export default async function ProdukPage() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || "https://api-desa-cigedug.onrender.com"}/api/produk`, { cache: 'no-store' });
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || "https://web-kecamatan-cigedug-backend-five.vercel.app"}/api/produk`, { cache: 'no-store' });
   const produk = await res.json().catch(() => []);
 
 
