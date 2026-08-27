@@ -60,8 +60,12 @@ SupabaseStorage.prototype._handleFile = function _handleFile(req, file, cb) {
 };
 SupabaseStorage.prototype._removeFile = function _removeFile(req, file, cb) { cb(null); };
 
-const uploadDir = path.join(__dirname, 'uploads');
-if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir);
+const uploadDir = process.env.VERCEL ? path.join('/tmp', 'uploads') : path.join(__dirname, 'uploads');
+try {
+  if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir, { recursive: true });
+} catch (e) {
+  console.log('Could not create uploads dir, likely on read-only Vercel environment. Ignored.');
+}
 
 const storage = new SupabaseStorage({ bucket: 'uploads' });
 const upload = multer({ storage });
